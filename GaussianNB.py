@@ -20,7 +20,7 @@ predictions = model.predict(X_test)
 accuracy = accuracy_score(y_test, predictions)
 print(f'GaussianNB Accuracy: {accuracy}')
 
-test_data = pd.read_csv("./Data/test1.csv")
+test_data = pd.read_csv("./Data/test.csv")
 test_predictions = model.predict(test_data[['Flow Duration', 'Total Fwd Packets']])
 test_data['Predicted Label'] = test_predictions
 test_data['Predicted Label'] = test_data['Predicted Label'].map({1: 'BENIGN', 0: 'Portmap'})
