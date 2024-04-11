@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
 
-data = pd.read_csv("./Data/Portmap.csv")  
+data = pd.read_csv("./Data/train.csv")  
 
 data['Label'] = data['Label'].map({'BENIGN': 1, 'Portmap': 0})
 
