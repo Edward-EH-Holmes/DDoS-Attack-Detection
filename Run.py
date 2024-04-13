@@ -1,9 +1,9 @@
-import Gaussian_NB
-import Gradient_Boosting
-import Random_Forest
-import DataVis
-import AccTime2D as AT2D
-import AccTime3D as AT3D
+import Algorithm.Gaussian_NB as GNB
+import Algorithm.Gradient_Boosting as GB
+import Algorithm.Random_Forest as RF
+import Vis.DataVis as DataVis
+import Vis.AccTime2D as AT2D
+import Vis.AccTime3D as AT3D
 
 train_data = "./Data/train.csv"
 test_data = "./Data/test.csv"
@@ -11,11 +11,11 @@ portmap_data = "./Data/Portmap.csv"
 
 DataVis.DataVis(train_data)
 
-accuracy_GNB, timeGNB = Gaussian_NB.GNB(train_data, test_data)
+accuracy_GNB, timeGNB = GNB.GNB(train_data, test_data)
 
-accuracy_GB , timeGB = Gradient_Boosting.GB(train_data, test_data)
+accuracy_GB , timeGB = GB.GB(train_data, test_data)
 
-accuracy_RF, timeRF = Random_Forest.RF(train_data, test_data)
+accuracy_RF, timeRF = RF.RF(train_data, test_data)
 
 algorithms = ['Gaussian Naive Bayes', 'Gradient Boosting', 'Random Forest']
 accuracies = [accuracy_GNB, accuracy_GB, accuracy_RF]
