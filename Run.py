@@ -17,7 +17,7 @@ accuracy_GB , timeGB = GB.GB(train_data, test_data)
 
 accuracy_RF, timeRF = RF.RF(train_data, test_data)
 
-algorithms = ['Gaussian Naive Bayes', 'Gradient Boosting', 'Random Forest']
+algorithms = ['GNB', 'GB', 'RF']
 accuracies = [accuracy_GNB, accuracy_GB, accuracy_RF]
 time_used = [timeGNB, timeGB, timeRF]
 
@@ -25,6 +25,6 @@ AT2D.AccTime2D(algorithms, accuracies, time_used)
 
 AT3D.AccTime3D(algorithms, accuracies, time_used)
 
-print("Algorithm\t\tAccuracy\t\tTime Used")
+print("Algorithm\t Accuracy\t\t Time Used")
 for i in range(len(algorithms)):
     print(algorithms[i], "\t\t", round(accuracies[i], 10), "\t\t", round(time_used[i], 10))

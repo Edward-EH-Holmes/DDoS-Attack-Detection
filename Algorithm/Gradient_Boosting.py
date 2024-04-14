@@ -28,7 +28,7 @@ def GB(train, test):
     test_predictions = model.predict(test_data[['Flow Duration', 'Total Fwd Packets']])
     test_data['Predicted Label'] = test_predictions
     test_data['Predicted Label'] = test_data['Predicted Label'].map({1: 'BENIGN', 0: 'Portmap'})
-    print(test_data[['Flow Duration', 'Total Fwd Packets', 'Predicted Label']])
+    #print(test_data[['Flow Duration', 'Total Fwd Packets', 'Predicted Label']])
 
     endGB = time.time()
     timeGB = endGB - startGB
