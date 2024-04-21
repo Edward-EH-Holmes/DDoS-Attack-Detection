@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, confusion_matrix
 
 import time
 
@@ -22,7 +22,6 @@ def GB(train, test):
     model.fit(X_train, y_train)
 
     predictions = model.predict(X_test)
-    accuracy = accuracy_score(y_test, predictions)
 
     test_data = pd.read_csv(test)
     test_predictions = model.predict(test_data[['Flow Duration', 'Total Fwd Packets']])
@@ -33,4 +32,28 @@ def GB(train, test):
     endGB = time.time()
     timeGB = endGB - startGB
 
-    return accuracy, timeGB
+    # Calculate Accuracy
+    accuracy = accuracy_score(y_test, predictions)
+
+    # Calculate Confusion Matrix
+    tn, fp, fn, tp = confusion_matrix(y_test, predictions).ravel()
+    
+    # Calculate Precision
+    precision_rate = tp / (tp + fp) if (tp + fp) > 0 else 0
+
+    # Calculate False Alarm Rate
+    false_alarm_rate = fp / (fp + tp) if (fp + tp) > 0 else 0
+
+    # Output Metrics
+    metrics = {
+        'Accuracy': accuracy,
+        'True Positives': tp,
+        'False Positives': fp,
+        'True Negatives': tn,
+        'False Negatives': fn,
+        'Precision': precision_rate,
+        'False Alarm Rate': false_alarm_rate,
+        'Time Taken (s)': timeGB
+    }
+
+    return accuracy, timeGB, precision_rate, false_alarm_rate
