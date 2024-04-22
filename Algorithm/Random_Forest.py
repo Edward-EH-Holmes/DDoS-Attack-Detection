@@ -41,8 +41,11 @@ def RF(train, test):
     # Calculate Precision
     precision_rate = tp / (tp + fp) if (tp + fp) > 0 else 0
 
-    # Calculate False Alarm Rate
-    false_alarm_rate = fp / (fp + tp) if (fp + tp) > 0 else 0
+    # Calculate Recall
+    recall_rate = tp / (fn + tp) if (fn + tp) > 0 else 0
+
+    # Calculate F1 Score
+    f1_score = 2 * (precision_rate * recall_rate) / (precision_rate + recall_rate) if (precision_rate + recall_rate) > 0 else 0
 
     # Output Metrics
     metrics = {
@@ -52,7 +55,7 @@ def RF(train, test):
         'True Negatives': tn,
         'False Negatives': fn,
         'Precision': precision_rate,
-        'False Alarm Rate': false_alarm_rate,
+        'Recall': recall_rate,
         'Time Taken (s)': timeRF
     }
-    return accuracy, timeRF, precision_rate, false_alarm_rate
+    return accuracy, timeRF, precision_rate, recall_rate, f1_score
