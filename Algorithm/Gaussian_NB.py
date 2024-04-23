@@ -6,7 +6,7 @@ import numpy as np
 
 import time
 
-def GNB(train, test):
+def GNB(train, test):  
     startGNB = time.time()
 
     data = pd.read_csv(train)
