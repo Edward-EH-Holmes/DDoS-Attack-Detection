@@ -1,7 +1,7 @@
 # CS5340-DDoS-Attack-Detection
 Hi, I'm Edward ZHAO, the main programmer of the project for CS5340 Uncertainty Modeling in AI -- DDoS Attack Detection.
 
-Raw Data is always a bit tricky to read, but it won't be if I extract the data I need from it. So I only used processed Data instead of Raw Data in this project.
+Raw Data is always a bit tricky to use, but it won't be if I extract the data I need from it. So I only used processed Data instead of Raw Data in this project.
 
 The data in the project comes from a simulated DDoS attack. We obtained first-hand information about DDoS by attacking the range (a Debian Server) and collecting data.
 
