@@ -5,7 +5,7 @@ Raw Data is always a bit tricky to use, but it won't be if I extract the data I 
 
 The data in the project comes from a simulated DDoS attack. We obtained first-hand information about DDoS by attacking the range (a Debian Server) and collecting data.
 
-This project includes three models: Gaussian Naive Bayes, gradient boosting, and Random forest. This project compares the results of Accuracy, Time Used, Precision Rate, Recall, and F1 Score to judge the quality of the model.
+This project includes three models: Gaussian Naive Bayes, Gradient Boosting, and Random Forest. This project compares the results of Accuracy, Time Used, Precision Rate, Recall, and F1 Score to judge the quality of the model.
 
 The following are five numerical visualization results for the three models:
 
